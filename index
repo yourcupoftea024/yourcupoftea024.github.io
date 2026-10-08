@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nama Kamu — Social Media, Video Editing & Desain Grafis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ECEEF5;--surface:#FFFFFF;--ink:#15182E;--muted:#5A5F7A;--line:#CDD1E2;
+  --blue:#3B3FF5;--pink:#FF4F8B;--yellow:#FFC83D;--teal:#12B5A6;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10121F;--surface:#191C30;--ink:#EEF0FA;--muted:#9EA3BF;--line:#2B2F4A;--blue:#7B7FFF}}
+:root[data-theme="dark"]{--bg:#10121F;--surface:#191C30;--ink:#EEF0FA;--muted:#9EA3BF;--line:#2B2F4A;--blue:#7B7FFF}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Georgia,sans-serif;line-height:1.05;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+h2{font-size:clamp(30px,5vw,46px);font-weight:800;margin-bottom:12px}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 36px}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;flex-wrap:wrap}
+.logo{font:800 20px 'Bricolage Grotesque',sans-serif;text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-weight:500}
+nav ul a{text-decoration:none;color:var(--muted)}nav ul a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;background:var(--blue);color:#fff;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:16px}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+
+/* hero */
+.hero{padding:48px 0 64px}
+h1{font-size:clamp(42px,8.5vw,96px);font-weight:800;max-width:14ch}
+.hero p{max-width:50ch;font-size:19px;color:var(--muted);margin:22px 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* timeline */
+.tl{margin-top:52px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 16px 16px 0;position:relative;overflow:hidden}
+.track{display:grid;grid-template-columns:104px 1fr;align-items:center;height:44px}
+.track span{padding-left:16px;font-size:13px;font-weight:600;color:var(--muted)}
+.lane{position:relative;height:30px}
+.clip{position:absolute;top:0;height:30px;border-radius:6px;color:#fff;font-size:12px;font-weight:600;padding:5px 9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c1{background:var(--blue)}.c2{background:var(--pink)}.c3{background:var(--teal)}.c4{background:var(--yellow);color:#15182E}
+.playhead{position:absolute;top:0;bottom:0;left:104px;width:2px;background:var(--ink);animation:play 3.2s cubic-bezier(.6,0,.2,1) 1 forwards}
+.playhead::before{content:"";position:absolute;top:0;left:-6px;border:7px solid transparent;border-top:9px solid var(--ink);border-bottom:0}
+@keyframes play{from{left:104px}to{left:calc(100% - 16px)}}
+@media (prefers-reduced-motion:reduce){.playhead{animation:none;left:62%}}
+
+/* layanan */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h3{font-size:22px;margin-bottom:8px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.bar{height:6px;width:44px;border-radius:3px;margin-bottom:18px}
+
+/* karya */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.filters button{font:500 15px Figtree,sans-serif;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.works{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;align-items:start}
+.work{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.work[hidden]{display:none}
+.thumb{display:flex;align-items:flex-end;padding:16px;color:#fff;font:800 22px/1.1 'Bricolage Grotesque',sans-serif;background-size:cover;background-position:center}
+.r916{aspect-ratio:9/12}.r11{aspect-ratio:1/1}.r169{aspect-ratio:16/10}
+.work .meta{padding:14px 16px 16px}
+.work h3{font-size:18px;margin-bottom:4px}
+.work p{margin:0;font-size:14.5px;color:var(--muted)}
+.tag{display:inline-block;font-size:12.5px;font-weight:600;color:var(--blue);margin-bottom:6px}
+.g1{background:linear-gradient(150deg,#3B3FF5,#8A4DFF)}.g2{background:linear-gradient(150deg,#FF4F8B,#FF8A4D)}
+.g3{background:linear-gradient(150deg,#12B5A6,#2E7BFF)}.g4{background:linear-gradient(150deg,#FFC83D,#FF4F8B);color:#15182E}
+.g5{background:linear-gradient(150deg,#15182E,#3B3FF5)}.g6{background:linear-gradient(150deg,#12B5A6,#FFC83D);color:#15182E}
+
+/* tentang */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+@media(max-width:760px){.about{grid-template-columns:1fr}nav ul{gap:14px}}
+.about p{margin:0 0 16px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stat b{display:block;font:800 34px 'Bricolage Grotesque',sans-serif}
+.stat span{font-size:14px;color:var(--muted)}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tools li{list-style:none;border:1.5px solid var(--line);border-radius:999px;padding:5px 14px;font-size:14.5px;background:var(--surface)}
+.tools{padding:0}
+
+/* kontak */
+.contact{background:var(--ink);color:var(--bg);border-radius:22px;padding:clamp(28px,6vw,64px);text-align:left}
+.contact h2{max-width:16ch}
+.contact p{color:inherit;opacity:.8;max-width:48ch;margin:0 0 26px}
+.contact .btn{background:var(--yellow);color:#15182E}
+.contact .btn.ghost{background:transparent;color:var(--bg);border-color:var(--bg)}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Navigasi utama">
+    <a class="logo" href="#top">Nama Kamu</a>
+    <ul>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#karya">Karya</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <h1>Strategi, video, dan desain dalam satu tangan.</h1>
+    <p>Saya membantu brand dan kreator tampil konsisten di media sosial: dari merancang konten, mengedit video, sampai membuat visual yang enak dilihat.</p>
+    <div class="cta">
+      <a class="btn" href="#karya">Lihat karya</a>
+      <a class="btn ghost" href="#kontak">Ajak kerja sama</a>
+    </div>
+
+    <div class="tl" role="img" aria-label="Ilustrasi timeline editing dengan empat jalur: strategi, konten, video, dan desain">
+      <div class="track"><span>Strategi</span><div class="lane"><div class="clip c1" style="left:0;width:34%">Riset &amp; content plan</div><div class="clip c1" style="left:36%;width:30%">Kalender konten</div><div class="clip c1" style="left:68%;width:30%">Laporan performa</div></div></div>
+      <div class="track"><span>Konten</span><div class="lane"><div class="clip c2" style="left:8%;width:26%">Copywriting</div><div class="clip c2" style="left:36%;width:22%">Caption</div><div class="clip c2" style="left:60%;width:38%">Jadwal posting &amp; komunitas</div></div></div>
+      <div class="track"><span>Video</span><div class="lane"><div class="clip c3" style="left:0;width:18%">Reels</div><div class="clip c3" style="left:20%;width:24%">Color grading</div><div class="clip c3" style="left:46%;width:20%">Motion</div><div class="clip c3" style="left:68%;width:30%">Iklan &amp; company profile</div></div></div>
+      <div class="track"><span>Desain</span><div class="lane"><div class="clip c4" style="left:4%;width:30%">Feed &amp; carousel</div><div class="clip c4" style="left:36%;width:24%">Logo &amp; identitas</div><div class="clip c4" style="left:62%;width:36%">Poster, banner, thumbnail</div></div></div>
+      <div class="playhead" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <section id="layanan">
+    <h2>Yang bisa saya kerjakan</h2>
+    <p class="lead">Bisa satu layanan saja, bisa paket lengkap. Semua disesuaikan dengan tujuan dan anggaran Anda.</p>
+    <div class="grid">
+      <article class="card"><div class="bar" style="background:var(--blue)"></div><h3>Social media strategy</h3><p>Riset audiens dan kompetitor, penentuan konten utama, kalender posting, dan evaluasi bulanan berdasarkan data.</p></article>
+      <article class="card"><div class="bar" style="background:var(--pink)"></div><h3>Social media specialist</h3><p>Pengelolaan akun harian: copywriting, penjadwalan, balas komentar dan DM, serta pelaporan insight.</p></article>
+      <article class="card"><div class="bar" style="background:var(--teal)"></div><h3>Video editing</h3><p>Reels, TikTok, YouTube, iklan, dan company profile dengan ritme cepat, subtitle, dan color grading.</p></article>
+      <article class="card"><div class="bar" style="background:var(--yellow)"></div><h3>Desain grafis</h3><p>Template feed, carousel, logo, poster, banner, dan materi cetak yang konsisten dengan identitas brand.</p></article>
+    </div>
+  </section>
+
+  <section id="karya">
+    <h2>Karya pilihan</h2>
+    <p class="lead">Beberapa proyek terbaru. Ganti isi kartu di bawah dengan karya dan hasil nyata Anda.</p>
+    <div class="filters" role="group" aria-label="Filter karya">
+      <button aria-pressed="true" data-f="all">Semua</button>
+      <button aria-pressed="false" data-f="strategi">Strategi</button>
+      <button aria-pressed="false" data-f="video">Video</button>
+      <button aria-pressed="false" data-f="desain">Desain</button>
+    </div>
+    <div class="works" id="works">
+      <article class="work" data-c="strategi"><div class="thumb r169 g1">+240% jangkauan</div><div class="meta"><span class="tag">Strategi</span><h3>Nama Brand Kuliner</h3><p>Rebranding konten Instagram selama 3 bulan. Isi hasil dan angka asli di sini.</p></div></article>
+      <article class="work" data-c="video"><div class="thumb r916 g2">Reels 1,2 juta views</div><div class="meta"><span class="tag">Video</span><h3>Kampanye Reels Fashion</h3><p>Editing 12 video pendek, termasuk subtitle dan musik.</p></div></article>
+      <article class="work" data-c="desain"><div class="thumb r11 g4">Feed &amp; Carousel</div><div class="meta"><span class="tag">Desain</span><h3>Template Feed Klinik</h3><p>Sistem desain 20 template yang mudah dipakai tim internal.</p></div></article>
+      <article class="work" data-c="video"><div class="thumb r169 g3">Company Profile</div><div class="meta"><span class="tag">Video</span><h3>Company Profile Startup</h3><p>Video 90 detik dengan motion graphic dan voice over.</p></div></article>
+      <article class="work" data-c="desain"><div class="thumb r11 g5">Logo &amp; Identitas</div><div class="meta"><span class="tag">Desain</span><h3>Identitas Brand Kopi</h3><p>Logo, palet warna, kemasan, dan panduan penggunaan.</p></div></article>
+      <article class="work" data-c="strategi"><div class="thumb r11 g6">Konten bulanan</div><div class="meta"><span class="tag">Strategi</span><h3>Pengelolaan Akun UMKM</h3><p>Kalender konten, posting rutin, dan laporan bulanan.</p></div></article>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <div class="about">
+      <div>
+        <h2>Tentang saya</h2>
+        <p>Halo, saya Nama Kamu, freelancer di bidang social media dan konten visual. Saya terbiasa mengerjakan dari hulu ke hilir: menyusun strategi, membuat materinya, lalu mengukur hasilnya.</p>
+        <p>Karena strategi, video, dan desain dikerjakan oleh satu orang, brief Anda tidak perlu diterjemahkan antar tim. Hasilnya lebih cepat dan tampilannya lebih konsisten.</p>
+        <ul class="tools" aria-label="Tools yang digunakan">
+          <li>Premiere Pro</li><li>After Effects</li><li>CapCut</li><li>DaVinci Resolve</li><li>Photoshop</li><li>Illustrator</li><li>Figma</li><li>Canva</li><li>Meta Business Suite</li>
+        </ul>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>5+</b><span>tahun pengalaman</span></div>
+        <div class="stat"><b>60+</b><span>klien dan proyek</span></div>
+        <div class="stat"><b>2 hari</b><span>revisi pertama</span></div>
+        <div class="stat"><b>2x</b><span>revisi gratis</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak" style="padding-top:24px">
+    <div class="contact">
+      <h2>Punya proyek? Ceritakan ke saya.</h2>
+      <p>Kirim brief singkat, tujuan, dan tenggat waktunya. Saya balas dalam 1x24 jam beserta estimasi harga.</p>
+      <div class="cta">
+        <a class="btn" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20Anda" target="_blank" rel="noopener">Chat WhatsApp</a>
+        <a class="btn ghost" href="mailto:halo@namakamu.com">Kirim email</a>
+        <a class="btn ghost" href="https://instagram.com/namakamu" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><span>© 2026 Nama Kamu</span><span>Tersedia untuk proyek baru</span></footer>
+</div>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.filters button'),items=document.querySelectorAll('.work');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    items.forEach(function(w){w.hidden=!(b.dataset.f==='all'||w.dataset.c===b.dataset.f)});
+  })});
+})();
+</script>
+</body>
+</html>
