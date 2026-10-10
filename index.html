@@ -71,7 +71,7 @@ h2{font-size:clamp(28px,4.5vw,44px)}
 header{position:sticky;top:0;z-index:20;background:rgba(26,31,54,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:76px;flex-wrap:wrap;padding-block:8px}
 .logo{display:flex;align-items:center;gap:12px}
-.logo b{width:40px;height:40px;border-radius:12px;border:1px solid rgba(214,182,109,.45);background:rgba(214,182,109,.12);color:var(--ac);display:grid;place-items:center;font:700 20px var(--fh)} /* kotak inisial */
+.logo b{width:44px;height:44px;border-radius:12px;border:1px solid rgba(214,182,109,.45);background:rgba(214,182,109,.12) center 20%/cover no-repeat;overflow:hidden;color:var(--ac);display:grid;place-items:center;font:700 20px var(--fh)} /* kotak foto (inisial bila belum ada foto) */
 .logo strong{display:block;font:700 19px var(--fh);letter-spacing:.02em;text-transform:uppercase;line-height:1.1}
 .logo small{display:block;color:var(--mut);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
 nav{display:flex;gap:26px;font-size:17px;font-weight:500}
@@ -101,7 +101,7 @@ h1 em{font-style:normal;display:block;background:linear-gradient(90deg,var(--ac)
 .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
 .chip{padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:#cfd4e0;font:600 16px var(--fb);cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ac);border-color:var(--ac);color:var(--navy)} /* filter aktif */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px;align-items:start}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
 .card.u{border-color:rgba(214,182,109,.6)} /* kartu unggulan: tepi oranye */
 .ct{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px}
@@ -338,7 +338,7 @@ const TOOLS = [
   ['Pr', 'Premiere Pro', 'Timeline & Multi-track'],
   ['Cc', 'CapCut',       'Short-Form & Captions'],
   ['Cv', 'Canva',        'Carousel & Feed Layout'],
-  ['Ae', 'After effect', 'Desain & Digital Asset']
+  ['Ae', 'After effect', 'Motion Video']
 ];
 
 /* ---------- SKILL: [emoji, judul, isi] ---------- */
@@ -478,7 +478,8 @@ $('form').addEventListener('submit', e => {
 });
 
 /* Pengisian awal data pribadi */
-$('ini').textContent = PROFIL.nama.trim()[0].toUpperCase();
+if (TENTANG.foto) $('ini').style.backgroundImage = `url('${imgSrc(TENTANG.foto)}')`;
+else $('ini').textContent = PROFIL.nama.trim()[0].toUpperCase();
 $('nm').textContent = PROFIL.nama;
 $('rl').textContent = PROFIL.peran;
 $('tsd').textContent = PROFIL.tersedia;
