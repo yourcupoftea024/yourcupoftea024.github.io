@@ -105,8 +105,9 @@ h1 em{font-style:normal;display:block;background:linear-gradient(90deg,var(--ac)
 
 /* ===================== FEED & CAROUSEL ===================== */
 .dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-.strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:14px;background:#10142A}
-.strip>*{flex:0 0 100%;aspect-ratio:var(--r,1/1);object-fit:contain;scroll-snap-align:center;display:grid;place-items:center;font:700 20px var(--fh);color:#fff} /* satu slide = satu kotak */
+.strip{display:flex;align-items:flex-start;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:14px;background:#10142A}
+.strip>*{flex:0 0 100%;width:100%;min-width:0;max-width:100%;height:auto;aspect-ratio:var(--r,1/1);object-fit:contain;scroll-snap-align:center;display:grid;place-items:center;font:700 20px var(--fh);color:#fff}
+.strip img{display:block}
 .hint{color:var(--mut);font-size:14px;margin-top:8px}
 
 /* ===================== KEAHLIAN ===================== */
