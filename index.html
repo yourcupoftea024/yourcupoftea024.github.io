@@ -289,13 +289,13 @@ const SHOWREEL = { url: 'https://drive.google.com/file/d/1w3gaXA2hLKa8BFfDa2oS05
    Tambah blok baru, pisahkan dengan koma. Filter kategori dibuat otomatis dari 'kategori'.
    unggulan:true -> ada label UNGGULAN | rasio: '9/16' (Reels), '16/9' (landscape), '1/1' */
 const VIDEO = [
-  { judul: 'Video AM',   kategori: 'Reels',     label: 'After Movie',  unggulan: true,  url: 'https://drive.google.com/file/d/1GNLpaGa7dzQJlbc_XXrLPN0sq_VM_ker/view?usp=drive_link', poster: '', rasio: '16/9' },
-  { judul: 'Reels',   kategori: 'Reels',     label: 'Short-Form',  unggulan: true,  url: 'https://drive.google.com/file/d/1F71jb9Ms2eTJz68uxdCkLeHCcnLEvpeD/view?usp=drive_link', poster: '', rasio: '9/16' },
-  { judul: 'Motion logo',      kategori: 'Motion',    label: 'Motion Graphic', unggulan: false, url: 'https://drive.google.com/file/d/1Um514dvRFdaoSRxrrq3AX6Y20LQSlT0a/view?usp=drive_link', poster: '', rasio: '16/9' },
-  { judul: 'Long video',   kategori: 'Corporate', label: 'Corporate',   unggulan: false, url: '', poster: 'https://drive.google.com/file/d/1QhfrO6YASu7wmBsqkRj7sS0j1pojwp5I/view?usp=drive_link', rasio: '16/9' },
-  { judul: 'Motion logo',  kategori: 'Voice Over',label: 'Corporate',  unggulan: false, url: 'https://drive.google.com/file/d/1BiH8B9iEA4A38q2xdP3oyEG7rHORcBQR/view?usp=drive_link', poster: '', rasio: '16/9' },
-  { judul: 'Video AM',     kategori: 'Short-Form',     label: 'Short-Form',  unggulan: false, url: 'https://drive.google.com/file/d/1OrPMNEgR0RQDx8ENkz0wLAn5of7QK7sc/view?usp=drive_link', poster: '', rasio: '16/9' }
-  { judul: 'Video Profile',     kategori: 'Short-Form',     label: 'Short-Form',  unggulan: false, url: 'https://drive.google.com/file/d/1cWQxbPSivfrhjDgiCLvUNQpFgX1Axbkq/view?usp=drive_link', poster: '', rasio: '16/9' }
+  { judul: 'Video AM',      kategori: 'Reels',      label: 'After Movie',    unggulan: true,  url: 'https://drive.google.com/file/d/1GNLpaGa7dzQJlbc_XXrLPN0sq_VM_ker/view?usp=drive_link', poster: '', rasio: '16/9' },
+  { judul: 'Reels',         kategori: 'Reels',      label: 'Short-Form',     unggulan: true,  url: 'https://drive.google.com/file/d/1F71jb9Ms2eTJz68uxdCkLeHCcnLEvpeD/view?usp=drive_link', poster: '', rasio: '9/16' },
+  { judul: 'Motion logo',   kategori: 'Motion',     label: 'Motion Graphic', unggulan: false, url: 'https://drive.google.com/file/d/1Um514dvRFdaoSRxrrq3AX6Y20LQSlT0a/view?usp=drive_link', poster: '', rasio: '16/9' },
+  { judul: 'Long video',    kategori: 'Corporate',  label: 'Corporate',      unggulan: false, url: 'https://drive.google.com/file/d/1QhfrO6YASu7wmBsqkRj7sS0j1pojwp5I/view?usp=drive_link', poster: '', rasio: '16/9' },
+  { judul: 'Motion logo 2', kategori: 'Motion',     label: 'Corporate',      unggulan: false, url: 'https://drive.google.com/file/d/1BiH8B9iEA4A38q2xdP3oyEG7rHORcBQR/view?usp=drive_link', poster: '', rasio: '16/9' },
+  { judul: 'Video AM 2',    kategori: 'Short-Form', label: 'Short-Form',     unggulan: false, url: 'https://drive.google.com/file/d/1OrPMNEgR0RQDx8ENkz0wLAn5of7QK7sc/view?usp=drive_link', poster: '', rasio: '16/9' },
+  { judul: 'Video Profile', kategori: 'Short-Form', label: 'Short-Form',     unggulan: false, url: 'https://drive.google.com/file/d/1cWQxbPSivfrhjDgiCLvUNQpFgX1Axbkq/view?usp=drive_link', poster: '', rasio: '16/9' }
 ];
 
 /* ---------- DESAIN: feed & carousel ----------
@@ -338,7 +338,7 @@ const TOOLS = [
   ['Pr', 'Premiere Pro', 'Timeline & Multi-track'],
   ['Cc', 'CapCut',       'Short-Form & Captions'],
   ['Cv', 'Canva',        'Carousel & Feed Layout'],
-  ['Fg', 'Figma',        'Desain & Digital Asset']
+  ['Ae', 'After effect', 'Desain & Digital Asset']
 ];
 
 /* ---------- SKILL: [emoji, judul, isi] ---------- */
@@ -360,7 +360,7 @@ const TENTANG = {
   judul: 'Saya membuat ide lebih mudah dilihat.',  // judul besar
   isi: 'Saya Firly Pomolango, social media strategist dan video editor yang fokus pada konten media sosial. Saya suka alur konten yang terstruktur, tata letak yang bersih, dan sistem visual fleksibel yang menyesuaikan kebutuhan tiap klien.',
   tag: ['Strategi Konten', 'Social Media', 'Video Editing', 'Desain Feed', 'Branding', 'Kampanye'], // label keahlian
-  foto: 'https://drive.google.com/file/d/1_RFlCmFZptQGSTGjxGAT3GrVqGKVB9rR/view?usp=sharing',                                        // foto, contoh: 'Foto%20Port/profil.jpg' (kosong = tampil inisial)
+  foto: 'FIRPOM.png',                              // foto profil
   caption: 'Firly Pomolango',                      // teks kiri di bawah foto
   ket: 'Freelancer'                                // teks kanan di bawah foto
 };
