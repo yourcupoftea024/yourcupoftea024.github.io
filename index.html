@@ -283,18 +283,19 @@ const HERO = {
 /* ---------- SHOWREEL: video utama ----------
    url: link YouTube/Vimeo/Google Drive atau file 'video/showreel.mp4' (kosongkan = placeholder)
    poster: gambar sampul (opsional, YouTube otomatis) | rasio: '16/9' */
-const SHOWREEL = { url: '', poster: '', rasio: '16/9' };
+const SHOWREEL = { url: 'https://drive.google.com/file/d/1w3gaXA2hLKa8BFfDa2oS05wQDbpi863G/view?usp=drive_link', poster: '', rasio: '16/9' };
 
 /* ---------- VIDEO: galeri karya ----------
    Tambah blok baru, pisahkan dengan koma. Filter kategori dibuat otomatis dari 'kategori'.
    unggulan:true -> ada label UNGGULAN | rasio: '9/16' (Reels), '16/9' (landscape), '1/1' */
 const VIDEO = [
-  { judul: 'Reels Produk #1',   kategori: 'Reels',     label: 'Short-Form',  unggulan: true,  url: '', poster: '', rasio: '9/16' },
-  { judul: 'Reels Produk #2',   kategori: 'Reels',     label: 'Short-Form',  unggulan: true,  url: '', poster: '', rasio: '9/16' },
-  { judul: 'Motion Promo',      kategori: 'Motion',    label: 'Motion Graphic', unggulan: false, url: '', poster: '', rasio: '9/16' },
-  { judul: 'Company Profile',   kategori: 'Corporate', label: 'Corporate',   unggulan: false, url: '', poster: '', rasio: '16/9' },
-  { judul: 'Voice Over Iklan',  kategori: 'Voice Over',label: 'Voice Over',  unggulan: false, url: '', poster: '', rasio: '9/16' },
-  { judul: 'Reels Edukasi',     kategori: 'Reels',     label: 'Short-Form',  unggulan: false, url: '', poster: '', rasio: '9/16' }
+  { judul: 'Video AM',   kategori: 'Reels',     label: 'After Movie',  unggulan: true,  url: 'https://drive.google.com/file/d/1GNLpaGa7dzQJlbc_XXrLPN0sq_VM_ker/view?usp=drive_link', poster: '', rasio: '16/9' },
+  { judul: 'Reels',   kategori: 'Reels',     label: 'Short-Form',  unggulan: true,  url: 'https://drive.google.com/file/d/1F71jb9Ms2eTJz68uxdCkLeHCcnLEvpeD/view?usp=drive_link', poster: '', rasio: '9/16' },
+  { judul: 'Motion logo',      kategori: 'Motion',    label: 'Motion Graphic', unggulan: false, url: 'https://drive.google.com/file/d/1Um514dvRFdaoSRxrrq3AX6Y20LQSlT0a/view?usp=drive_link', poster: '', rasio: '16/9' },
+  { judul: 'Long video',   kategori: 'Corporate', label: 'Corporate',   unggulan: false, url: '', poster: 'https://drive.google.com/file/d/1QhfrO6YASu7wmBsqkRj7sS0j1pojwp5I/view?usp=drive_link', rasio: '16/9' },
+  { judul: 'Motion logo',  kategori: 'Voice Over',label: 'Corporate',  unggulan: false, url: 'https://drive.google.com/file/d/1BiH8B9iEA4A38q2xdP3oyEG7rHORcBQR/view?usp=drive_link', poster: '', rasio: '16/9' },
+  { judul: 'Video AM',     kategori: 'Short-Form',     label: 'Short-Form',  unggulan: false, url: 'https://drive.google.com/file/d/1OrPMNEgR0RQDx8ENkz0wLAn5of7QK7sc/view?usp=drive_link', poster: '', rasio: '16/9' }
+  { judul: 'Video Profile',     kategori: 'Short-Form',     label: 'Short-Form',  unggulan: false, url: 'https://drive.google.com/file/d/1cWQxbPSivfrhjDgiCLvUNQpFgX1Axbkq/view?usp=drive_link', poster: '', rasio: '16/9' }
 ];
 
 /* ---------- DESAIN: feed & carousel ----------
@@ -349,17 +350,17 @@ const SKILL = [
 
 /* ---------- PENGALAMAN: judul, perusahaan, periode, isi ---------- */
 const PENGALAMAN = [
-  { judul: 'Social Media Specialist', co: 'Nama Perusahaan A', when: '2025 – Sekarang', isi: 'Mengelola akun, merancang kalender konten, dan memproduksi materi visual untuk media sosial.' },
-  { judul: 'Video Editor Freelance',  co: 'Nama Klien B',      when: '2024',            isi: 'Mengedit konten short-form, subtitle dinamis, dan layering audio untuk kampanye produk.' }
+  { judul: 'Social Media Strategist & Specialist', co: 'Abata Indonesia', when: '2022 – 2023', isi: 'Mengelola akun, merancang kalender konten, dan memproduksi materi visual untuk media sosial.' },
+  { judul: 'Video Editor Freelance',  co: 'Calon Bupati Temanggung',      when: '2024',            isi: 'Mengedit konten short-form, subtitle dinamis, dan layering audio untuk kampanye produk.' }
 ];
 
 /* ---------- TENTANG: bagian perkenalan sebelum kontak ---------- */
 const TENTANG = {
   eyebrow: 'Tentang Saya',                         // label kecil di atas judul
   judul: 'Saya membuat ide lebih mudah dilihat.',  // judul besar
-  isi: 'Saya Firly, social media strategist dan video editor yang fokus pada konten media sosial. Saya suka alur konten yang terstruktur, tata letak yang bersih, dan sistem visual fleksibel yang menyesuaikan kebutuhan tiap klien.',
+  isi: 'Saya Firly Pomolango, social media strategist dan video editor yang fokus pada konten media sosial. Saya suka alur konten yang terstruktur, tata letak yang bersih, dan sistem visual fleksibel yang menyesuaikan kebutuhan tiap klien.',
   tag: ['Strategi Konten', 'Social Media', 'Video Editing', 'Desain Feed', 'Branding', 'Kampanye'], // label keahlian
-  foto: '',                                        // foto, contoh: 'Foto%20Port/profil.jpg' (kosong = tampil inisial)
+  foto: 'https://drive.google.com/file/d/1_RFlCmFZptQGSTGjxGAT3GrVqGKVB9rR/view?usp=sharing',                                        // foto, contoh: 'Foto%20Port/profil.jpg' (kosong = tampil inisial)
   caption: 'Firly Pomolango',                      // teks kiri di bawah foto
   ket: 'Freelancer'                                // teks kanan di bawah foto
 };
