@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><!-- wajib untuk tampilan HP -->
-<title>Firly Pomolango — Social Media Strategist & Content Creation</title><!-- EDIT: judul tab browser -->
+<title>Firly Pomolango — Social Media Strategist & Video Editor</title><!-- EDIT: judul tab browser -->
 <!-- Font: Crimson Pro (sub judul & isi) dari Google Fonts. Maragsa (judul) dimuat dari folder fonts/ (lihat @font-face di <style>). -->
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -106,7 +106,7 @@ h1 em{font-style:normal;display:block;background:linear-gradient(90deg,var(--ac)
 /* ===================== FEED & CAROUSEL ===================== */
 .dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
 .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:14px;background:#10142A}
-.strip>*{flex:0 0 100%;aspect-ratio:1/1;object-fit:cover;scroll-snap-align:center;display:grid;place-items:center;font:700 20px var(--fh);color:#fff} /* satu slide = satu kotak */
+.strip>*{flex:0 0 100%;aspect-ratio:var(--r,1/1);object-fit:contain;scroll-snap-align:center;display:grid;place-items:center;font:700 20px var(--fh);color:#fff} /* satu slide = satu kotak */
 .hint{color:var(--mut);font-size:14px;margin-top:8px}
 
 /* ===================== KEAHLIAN ===================== */
@@ -243,38 +243,39 @@ const PROFIL = {
 const HERO = {
   baris1: 'Social Media Strategist &',            // baris putih
   baris2: 'Video Editor',                         // baris gradasi oranye
-  intro: 'Halo! Saya Firly Pomolango, social media strategist & Content Creator dengan pengalaman mengolah konten visual untuk media sosial serta kebutuhan branding. Terbiasa mengerjakan strategi, short-form video, dan desain feed sesuai brief klien.'
+  intro: 'Halo! Saya {nama}, social media strategist, video editor, dan graphic designer dengan pengalaman mengolah konten visual untuk media sosial serta kebutuhan branding. Terbiasa mengerjakan strategi, short-form video, dan desain feed sesuai brief klien.'
 };
 
 /* ---------- SHOWREEL: video utama ----------
    url: link YouTube/Vimeo/Google Drive atau file 'video/showreel.mp4' (kosongkan = placeholder)
    poster: gambar sampul (opsional, YouTube otomatis) | rasio: '16/9' */
-const SHOWREEL = { url: 'https://drive.google.com/file/d/1w3gaXA2hLKa8BFfDa2oS05wQDbpi863G/view?usp=drive_link', poster: '', rasio: '16/9' };
+const SHOWREEL = { url: '', poster: '', rasio: '16/9' };
 
 /* ---------- VIDEO: galeri karya ----------
    Tambah blok baru, pisahkan dengan koma. Filter kategori dibuat otomatis dari 'kategori'.
    unggulan:true -> ada label UNGGULAN | rasio: '9/16' (Reels), '16/9' (landscape), '1/1' */
 const VIDEO = [
-  { judul: 'After Movie 76 Silaturasa',   kategori: 'Reels',     label: 'After Movie',  unggulan: true,  url: 'https://drive.google.com/file/d/1GNLpaGa7dzQJlbc_XXrLPN0sq_VM_ker/view?usp=sharing', poster: '', rasio: '16/9' },
-  { judul: 'Motion logo Abata',   kategori: 'Reels',     label: 'Motion Graphic',  unggulan: true,  url: 'https://drive.google.com/file/d/1Um514dvRFdaoSRxrrq3AX6Y20LQSlT0a/view?usp=drive_link', poster: '', rasio: '16/9' },
-  { judul: 'Disabilitas Internasional',      kategori: 'Reels',    label: 'Short-form', unggulan: false, url: 'https://drive.google.com/file/d/1QhfrO6YASu7wmBsqkRj7sS0j1pojwp5I/view?usp=drive_link', poster: '', rasio: '16/9' },
-  { judul: 'Video Profile',   kategori: 'Profile', label: 'Corporate',   unggulan: false, url: 'https://drive.google.com/file/d/1cWQxbPSivfrhjDgiCLvUNQpFgX1Axbkq/view?usp=drive_link', poster: '', rasio: '16/9' },
-  { judul: 'Reels Edukasi',  kategori: 'Reels',label: 'Reels',  unggulan: false, url: 'https://drive.google.com/file/d/1F71jb9Ms2eTJz68uxdCkLeHCcnLEvpeD/view?usp=drive_link', poster: '', rasio: '9/16' },
-  { judul: 'Motion Logo Mie XT',     kategori: 'Reels',     label: 'Motion',  unggulan: false, url: 'https://drive.google.com/file/d/1BiH8B9iEA4A38q2xdP3oyEG7rHORcBQR/view?usp=drive_link', poster: '', rasio: '16/9' }
+  { judul: 'Reels Produk #1',   kategori: 'Reels',     label: 'Short-Form',  unggulan: true,  url: '', poster: '', rasio: '9/16' },
+  { judul: 'Reels Produk #2',   kategori: 'Reels',     label: 'Short-Form',  unggulan: true,  url: '', poster: '', rasio: '9/16' },
+  { judul: 'Motion Promo',      kategori: 'Motion',    label: 'Motion Graphic', unggulan: false, url: '', poster: '', rasio: '9/16' },
+  { judul: 'Company Profile',   kategori: 'Corporate', label: 'Corporate',   unggulan: false, url: '', poster: '', rasio: '16/9' },
+  { judul: 'Voice Over Iklan',  kategori: 'Voice Over',label: 'Voice Over',  unggulan: false, url: '', poster: '', rasio: '9/16' },
+  { judul: 'Reels Edukasi',     kategori: 'Reels',     label: 'Short-Form',  unggulan: false, url: '', poster: '', rasio: '9/16' }
 ];
 
 /* ---------- DESAIN: feed & carousel ----------
    gambar: daftar file/URL (satu per slide), contoh ['gambar/c1/1.jpg','gambar/c1/2.jpg']
+   rasio: bentuk slide, '1/1' (kotak, default) atau '4/5' (feed Instagram vertikal)
    Kosong = placeholder. slide: jumlah placeholder bila gambar kosong. link: tautan eksternal (opsional) */
 const DESAIN = [
-{ judul: 'Carousel Edukasi', tipe: 'Multi-slide', label: 'Kampanye Cabup',
-  gambar: [
-    'https://drive.google.com/file/d/1ccH9k23X8TgST3W88ZYRBrlaIZdfrw2H/view?usp=drive_link',
-    'https://drive.google.com/file/d/13XpJUchcdXX3cijuTcG3HKAPB1Sw7kz5/view?usp=drive_link',
-    'https://drive.google.com/file/d/1FnrwI6ZXGEYO9UBNSm2j2UbhXSSLtp14/view?usp=drive_link',
-    'https://drive.google.com/file/d/1t_CAEnjq2tV0GxJktOuqCjpdKLhoT1So/view?usp=drive_link'
-  ], slide: 4, link: '' },
-  { judul: 'Feed Promo Brand',  tipe: 'Multi-slide', label: 'Corporate Branding', gambar: [], slide: 10, link: '' },
+  { judul: 'Carousel Edukasi',  tipe: 'Multi-slide', label: 'Kampanye Cabup',
+    gambar: [
+      'gambar/wabup/Wabup_1.jpg',   // slide 1
+      'gambar/wabup/Wabup_2.png',   // slide 2
+      'gambar/wabup/Wabup_3.png',   // slide 3
+      'gambar/wabup/Wabup_4.png'    // slide 4
+    ], rasio: '4/5', slide: 4, link: '' },
+  { judul: 'Feed Promo Brand',  tipe: 'Single feed', label: 'Corporate Branding', gambar: [], slide: 1, link: '' },
   { judul: 'Cover Reels',       tipe: 'Single feed', label: 'Cover & Thumbnail',  gambar: [], slide: 1, link: '' }
 ];
 
@@ -283,7 +284,7 @@ const TOOLS = [
   ['Pr', 'Premiere Pro', 'Timeline & Multi-track'],
   ['Cc', 'CapCut',       'Short-Form & Captions'],
   ['Cv', 'Canva',        'Carousel & Feed Layout'],
-  ['Ae', 'After Effect', 'Motion Video'],
+  ['Fg', 'Figma',        'Desain & Digital Asset']
 ];
 
 /* ---------- SKILL: [emoji, judul, isi] ---------- */
@@ -311,6 +312,13 @@ const LAYANAN = [
 const $ = id => document.getElementById(id);                  // pintasan ambil elemen
 let kat = 'Semua';                                           // filter video aktif
 
+/* Ubah link gambar Google Drive (/file/d/ID/view) menjadi alamat gambar langsung. Link lain dibiarkan apa adanya */
+function imgSrc(u) {
+  u = (u || '').trim();                            // buang spasi di awal/akhir link
+  const m = u.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+  return m ? 'https://drive.google.com/thumbnail?id=' + m[1] + '&sz=w1200' : u;
+}
+
 /* Ubah link menjadi sumber pemutar: YouTube, Vimeo, Google Drive, atau file video */
 function sumber(u) {
   let m;
@@ -329,7 +337,7 @@ function player(u, auto) {
 /* Kotak video dengan tombol play. Klik -> pemutar menggantikan sampul */
 function media(u, poster, rasio) {
   const s = u ? sumber(u) : null;
-  const bg = poster || (s && s.thumb) || '';
+  const bg = imgSrc(poster) || (s && s.thumb) || '';
   const frame = (s && s.t === 'v' && !poster) ? `<video src="${u}#t=0.5" preload="metadata" muted></video>` : ''; // frame awal file mp4
   return `<div class="med" data-u="${u}" style="aspect-ratio:${rasio}${bg ? `;background-image:url('${bg}')` : ''}">${frame}${u ? '' : '<em>Belum ada video</em>'}<button class="play" aria-label="Putar video">▶</button></div>`;
 }
@@ -355,11 +363,11 @@ function renderDesain() {
   $('dgrid').innerHTML = DESAIN.map(d => {
     const n = d.gambar.length || d.slide;
     const slides = d.gambar.length
-      ? d.gambar.map(g => `<img src="${g}" alt="${d.judul}" loading="lazy">`).join('')
+      ? d.gambar.map(g => `<img src="${imgSrc(g)}" alt="${d.judul}" loading="lazy" referrerpolicy="no-referrer">`).join('')
       : Array.from({length: n}, (_, k) => `<div style="background:${['#377A4D','#FF4D3B','#2C3354','#8C7438','#377A4D'][k % 5]}">Slide ${k + 1}</div>`).join('');
     return `<article class="card">
       <div class="ct"><span class="tag${n > 1 ? '' : ' b'}">${d.tipe}${n > 1 ? ` (1–${n})` : ''}</span><span>${d.label}</span></div>
-      <div class="strip">${slides}</div>
+      <div class="strip" style="--r:${d.rasio || '1/1'}">${slides}</div>
       ${n > 1 ? '<div class="hint">Geser untuk melihat slide berikutnya →</div>' : ''}
       <h3>${d.judul}</h3>
       ${d.link ? `<a class="btn" href="${d.link}" target="_blank" rel="noopener">↗ Buka karya</a>` : ''}
